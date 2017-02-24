@@ -3,4 +3,87 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+$m-gutter: 1rem;
+$c-grey: #ddd;
+$c-sidebar-bckgrnd: #55aef5;
+$c-form-heading: #e7f4fd;
+$c-delete-button: #e73b3d;
+$c-white: #fff;
+$c-green: rgb(112, 196, 121);
+
 @import 'box-sizing';
+@import 'reset';
+
+* {
+  font-family: 'Merriweather', serif;
+
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $c-sidebar-bckgrnd;
+
+  &__form {
+    flex-grow: 1;
+  }
+
+  &__heading {
+    margin: 0;
+    padding: 0.5rem;
+    background: $c-form-heading;
+    text-align: center;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    margin: ($m-gutter);
+  }
+
+  &__submit {
+    &--button {
+      width: 100%;
+      padding: 1rem;
+      border: 0;
+      background: $c-green;
+      color: $c-white;
+      font-size: 1rem;
+    }
+  }
+}
+
+.section {
+  padding: $m-gutter;
+}
+
+.form {
+  padding: $m-gutter;
+
+  &__submit {
+    margin: ($m-gutter / 2);
+  }
+}
+
+.contact-card {
+  padding: 0 $m-gutter;
+  border: 0.1rem solid $c-grey;
+}
+
+.button {
+
+  &__delete {
+    width: 100%;
+    padding: $m-gutter;
+    border: 0;
+    background: $c-delete-button;
+    color: $c-white;
+    font-size: 1rem;
+  }
+}
