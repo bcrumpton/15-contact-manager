@@ -27,6 +27,7 @@ $c-green: rgb(112, 196, 121);
 .sidebar {
   display: flex;
   flex-direction: column;
+  width: 20%;
   height: 100vh;
   background: $c-sidebar-bckgrnd;
 
