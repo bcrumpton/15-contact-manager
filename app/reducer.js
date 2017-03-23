@@ -3,6 +3,8 @@ export default function reducer(state, action) {
     case 'CONTACT@FIND_ALL':
       return { contacts: action.data };
     case 'CONTACT@CREATE':
+      debugger;
+
       return { contacts: [...state.contacts, action.data] };
     default:
       return state || { contacts: [] };
