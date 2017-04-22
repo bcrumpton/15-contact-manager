@@ -1,10 +1,12 @@
+import { remove } from '../actions';
+
 class ItemView {
   constructor(data, store) {
     this.data = data;
     this.store = store;
 
     this.el = document.createElement('li');
-    this.el.classList.add('.grid__item');
+    this.el.classList.add('grid-item');
     this.el.innerHTML = `
     <div class="contact-card">
       <h2 class="contact-card__name">Crumpton, Brannon</h2>
@@ -12,11 +14,17 @@ class ItemView {
       <h4 class="contact-card__citystate">Nashville, TN</h4>
     </div>
     <div class="delete-button">
-      <button class="button button__delete">Delete</button>
+      <button class="button">Delete</button>
     </div>`;
   }
 
-  mounted() {}
+
+  mounted() {
+    this.el.querySelector('.button').addEventListener('click', () => {
+      alert('Hello');
+      // this.store.dispatch(remove(this.contact.id));
+    });
+  }
 
   render() {
     this.el.querySelector('.contact-card__name').innerText = `${this.data.firstName}, ${this.data.lastName}`;

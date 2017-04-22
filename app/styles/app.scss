@@ -17,7 +17,6 @@ $c-green: rgb(112, 196, 121);
 
 * {
   font-family: 'Merriweather', serif;
-
 }
 
 .app {
@@ -25,8 +24,10 @@ $c-green: rgb(112, 196, 121);
 }
 
 .sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
+  min-width: 10rem;
   width: 20%;
   height: 100vh;
   background: $c-sidebar-bckgrnd;
@@ -61,7 +62,8 @@ $c-green: rgb(112, 196, 121);
 }
 
 .section {
-  padding: $m-gutter;
+  padding: $m-gutter / 2;
+  margin-left: 15rem;
 }
 
 .form {
@@ -72,19 +74,28 @@ $c-green: rgb(112, 196, 121);
   }
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  &-item {
+    padding: $m-gutter / 2;
+  }
+}
+
 .contact-card {
   padding: 0 $m-gutter;
   border: 0.1rem solid $c-grey;
+  min-width: 10rem;
+  min-height: 10rem;
 }
 
 .button {
-
-  &__delete {
-    width: 100%;
-    padding: $m-gutter;
-    border: 0;
-    background: $c-delete-button;
-    color: $c-white;
-    font-size: 1rem;
-  }
+  width: 100%;
+  padding: $m-gutter;
+  border: 0;
+  background: $c-delete-button;
+  color: $c-white;
+  font-size: 1rem;
 }

@@ -44,4 +44,12 @@ module('reducer', () => {
 
     assert.deepEqual(reducer(oldState, action), expectedState);
   });
+
+  test('create and add johnny depp to array with angelina jolie', (assert) => {
+    const oldState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }] };
+    const action = { type: 'CONTACT@REMOVE', data: { firstName: 'Johnny', lastName: 'Depp' } };
+    const expectedState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }, { firstName: 'Johnny', lastName: 'Depp' }] };
+
+    assert.deepEqual(reducer(oldState, action), expectedState);
+  });
 });

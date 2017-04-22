@@ -1,6 +1,8 @@
 import ContactFormView from '../view/contact-form.js';
 import ContactListView from '../view/contact-list.js';
 
+import { findAll } from '../actions';
+
 export default class AppController {
   constructor(el, store) {
     this.el = el;
@@ -19,7 +21,6 @@ export default class AppController {
     this.ContactForm.mounted();
     this.ContactList.mounted();
 
-    const dataString = window.localStorage.contacts || '[]';
-    this.store.dispatch({ type: 'CONTACT@FIND_ALL', data: JSON.parse(dataString) });
+    this.store.dispatch(findAll());
   }
 }
