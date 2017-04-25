@@ -3,4 +3,99 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+$m-gutter: 1rem;
+$c-grey: rgb(221, 221, 221);
+$c-sidebar-bckgrnd: rgb(85, 174, 245);
+$c-form-heading: rgb(231, 244, 253);
+$c-delete-button: rgb(231, 59, 61);
+$c-white: rgb(255, 255, 255);
+$c-green: rgb(112, 196, 121);
+
 @import 'box-sizing';
+@import 'reset';
+
+* {
+  font-family: 'Merriweather', serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  width: 20%;
+  height: 100vh;
+  background: $c-sidebar-bckgrnd;
+
+  &__form {
+    flex-grow: 1;
+  }
+
+  &__heading {
+    margin: 0;
+    padding: 0.5rem;
+    background: $c-form-heading;
+    text-align: center;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    margin: ($m-gutter);
+  }
+
+  &__submit {
+    &--button {
+      width: 100%;
+      padding: 1rem;
+      border: 0;
+      background: $c-green;
+      color: $c-white;
+      font-size: 1rem;
+    }
+  }
+}
+
+.section {
+  padding: $m-gutter / 2;
+  flex-grow: 1;
+}
+
+.form {
+  padding: $m-gutter;
+
+  &__submit {
+    margin: ($m-gutter / 2);
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  &-item {
+    padding: $m-gutter / 2;
+  }
+}
+
+.contact-card {
+  padding: 0 $m-gutter;
+  border: 0.1rem solid $c-grey;
+  min-width: 10rem;
+  min-height: 10rem;
+}
+
+.button {
+  width: 100%;
+  padding: $m-gutter;
+  border: 0;
+  background: $c-delete-button;
+  color: $c-white;
+  font-size: 1rem;
+}
