@@ -24,7 +24,7 @@ class ItemView {
   }
 
   render() {
-    this.el.querySelector('.contact-card__name').innerText = `${this.data.firstName}, ${this.data.lastName}`;
+    this.el.querySelector('.contact-card__name').innerText = `${this.data.lastName}, ${this.data.firstName}`;
     this.el.querySelector('.contact-card__street').innerText = `${this.data.street}`;
     this.el.querySelector('.contact-card__citystate').innerText = `${this.data.city}, ${this.data.state}`;
   }
