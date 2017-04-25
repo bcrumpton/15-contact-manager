@@ -21,10 +21,10 @@ $c-green: rgb(112, 196, 121);
 
 .app {
   display: flex;
+  height: 100vh;
 }
 
 .sidebar {
-  position: fixed;
   display: flex;
   flex-direction: column;
   min-width: 10rem;
@@ -63,7 +63,7 @@ $c-green: rgb(112, 196, 121);
 
 .section {
   padding: $m-gutter / 2;
-  margin-left: 15rem;
+  flex-grow: 1;
 }
 
 .form {
