@@ -13,16 +13,13 @@ class ItemView {
       <h4 class="contact-card__street">2702 Hartford Dr.</h4>
       <h4 class="contact-card__citystate">Nashville, TN</h4>
     </div>
-    <div class="delete-button">
-      <button class="button">Delete</button>
-    </div>`;
+    <button class="button">Delete</button>`;
   }
 
 
   mounted() {
     this.el.querySelector('.button').addEventListener('click', () => {
-      alert('Hello');
-      // this.store.dispatch(remove(this.contact.id));
+      this.store.dispatch(remove(this.data.id));
     });
   }
 
@@ -39,19 +36,20 @@ export default class ListView {
     this.store = store;
   }
 
+  mounted() {
+    this.store.subscribe(() => {
+      this.render();
+    });
+  }
+
   render() {
     this.el.innerHTML = '';
     this.store.getState().contacts.forEach((contact) => {
       const item = new ItemView(contact, this.store);
       item.render();
+      item.mounted();
 
       this.el.appendChild(item.el);
-    });
-  }
-
-  mounted() {
-    this.store.subscribe(() => {
-      this.render();
     });
   }
 }
